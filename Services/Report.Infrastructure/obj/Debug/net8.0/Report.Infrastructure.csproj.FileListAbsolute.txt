@@ -1,0 +1,15 @@
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\bin\Debug\net8.0\Report.Infrastructure.deps.json
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\bin\Debug\net8.0\Report.Infrastructure.runtimeconfig.json
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\bin\Debug\net8.0\Report.Infrastructure.dll
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\bin\Debug\net8.0\Report.Infrastructure.pdb
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\obj\Debug\net8.0\Report.Infrastructure.csproj.AssemblyReference.cache
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\obj\Debug\net8.0\Report.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\obj\Debug\net8.0\Report.Infrastructure.AssemblyInfoInputs.cache
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\obj\Debug\net8.0\Report.Infrastructure.AssemblyInfo.cs
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\obj\Debug\net8.0\Report.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\obj\Debug\net8.0\Report.Infrastructure.sourcelink.json
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\obj\Debug\net8.0\Report.Infrastructure.dll
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\obj\Debug\net8.0\refint\Report.Infrastructure.dll
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\obj\Debug\net8.0\Report.Infrastructure.pdb
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\obj\Debug\net8.0\Report.Infrastructure.genruntimeconfig.cache
+D:\Github\tazebtcasestudy\Services\Report.Infrastructure\obj\Debug\net8.0\ref\Report.Infrastructure.dll

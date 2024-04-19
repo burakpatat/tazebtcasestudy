@@ -1,0 +1,15 @@
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\bin\Debug\net8.0\Form.Infrastructure.deps.json
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\bin\Debug\net8.0\Form.Infrastructure.runtimeconfig.json
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\bin\Debug\net8.0\Form.Infrastructure.dll
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\bin\Debug\net8.0\Form.Infrastructure.pdb
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Infrastructure.csproj.AssemblyReference.cache
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Infrastructure.AssemblyInfoInputs.cache
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Infrastructure.AssemblyInfo.cs
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Infrastructure.sourcelink.json
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Infrastructure.dll
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\refint\Form.Infrastructure.dll
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Infrastructure.pdb
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Infrastructure.genruntimeconfig.cache
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\ref\Form.Infrastructure.dll

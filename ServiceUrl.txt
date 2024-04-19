@@ -1,3 +1,5 @@
-Form Service =>
+Form Service => 7176
 
-Report Service =>
+Report Service => 7124
+
+Gateway => 7200

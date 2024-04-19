@@ -14,13 +14,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Clients", "Clients", "{23EE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{98260671-F4F3-40E6-868F-49B73F79C500}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGateways", "ApiGateways\APIGateways\APIGateways.csproj", "{024C5DCE-29D3-4E45-BCA0-592FEBB52CDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateways", "ApiGateways\APIGateways\APIGateways.csproj", "{024C5DCE-29D3-4E45-BCA0-592FEBB52CDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "Clients\WebApp\WebApp.csproj", "{71118829-47CC-4EB5-B00F-6AEB59F615FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApp", "Clients\WebApp\WebApp.csproj", "{71118829-47CC-4EB5-B00F-6AEB59F615FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormService", "Services\FormService\FormService.csproj", "{2DB0EAEB-D992-4112-9F78-005812BA3603}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FormService", "Services\FormService\FormService.csproj", "{2DB0EAEB-D992-4112-9F78-005812BA3603}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportService", "Services\ReportService\ReportService.csproj", "{C30FBFB6-6D93-4FE6-9D45-70657995221B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReportService", "Services\ReportService\ReportService.csproj", "{C30FBFB6-6D93-4FE6-9D45-70657995221B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form.Infrastructure", "Services\Form.Infrastructure\Form.Infrastructure.csproj", "{A1C9416C-3699-48B5-88B3-7B4553F59513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Report.Infrastructure", "Services\Report.Infrastructure\Report.Infrastructure.csproj", "{7392C48E-45FF-429C-A96E-B7D6ACC497C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +48,14 @@ Global
 		{C30FBFB6-6D93-4FE6-9D45-70657995221B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C30FBFB6-6D93-4FE6-9D45-70657995221B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C30FBFB6-6D93-4FE6-9D45-70657995221B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C9416C-3699-48B5-88B3-7B4553F59513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C9416C-3699-48B5-88B3-7B4553F59513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C9416C-3699-48B5-88B3-7B4553F59513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C9416C-3699-48B5-88B3-7B4553F59513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7392C48E-45FF-429C-A96E-B7D6ACC497C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7392C48E-45FF-429C-A96E-B7D6ACC497C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7392C48E-45FF-429C-A96E-B7D6ACC497C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7392C48E-45FF-429C-A96E-B7D6ACC497C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +65,8 @@ Global
 		{71118829-47CC-4EB5-B00F-6AEB59F615FE} = {23EE61C3-EA52-44E9-B347-272B107C887A}
 		{2DB0EAEB-D992-4112-9F78-005812BA3603} = {98260671-F4F3-40E6-868F-49B73F79C500}
 		{C30FBFB6-6D93-4FE6-9D45-70657995221B} = {98260671-F4F3-40E6-868F-49B73F79C500}
+		{A1C9416C-3699-48B5-88B3-7B4553F59513} = {98260671-F4F3-40E6-868F-49B73F79C500}
+		{7392C48E-45FF-429C-A96E-B7D6ACC497C9} = {98260671-F4F3-40E6-868F-49B73F79C500}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {221783C2-1104-44C5-946D-CD780AFE29BA}
