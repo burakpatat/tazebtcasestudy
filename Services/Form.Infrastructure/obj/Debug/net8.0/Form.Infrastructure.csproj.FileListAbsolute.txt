@@ -13,3 +13,6 @@ D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\refint\F
 D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Infrastructure.pdb
 D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Infrastructure.genruntimeconfig.cache
 D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\ref\Form.Infrastructure.dll
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\bin\Debug\net8.0\Shared.dll
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\bin\Debug\net8.0\Shared.pdb
+D:\Github\tazebtcasestudy\Services\Form.Infrastructure\obj\Debug\net8.0\Form.Inf.286BEBAD.Up2Date

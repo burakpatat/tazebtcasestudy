@@ -1,6 +1,9 @@
 
 using Form.Infrastructure.Persistence;
 using Microsoft.EntityFrameworkCore;
+using Shared;
+using Shared.Application.Mediator;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +13,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
 
 builder.Services.AddCors(opt =>
 {
@@ -24,7 +28,17 @@ builder.Services.AddCors(opt =>
 
 builder.Services.AddScoped<FormDbContext>();
 
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+/* MediatR */
+builder.Services.AddMediatRService(builder.Configuration);
+
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<FormDbContext>();
+    db.Database.Migrate();
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

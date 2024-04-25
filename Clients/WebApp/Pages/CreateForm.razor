@@ -1,0 +1,156 @@
+﻿@page "/create-form"
+@inject IJSRuntime JSRuntime
+@inject IFormService FormService
+
+<h3 class="text-center">Create Form</h3>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2">
+        </div>
+        <div class="col-8">
+            @if (isSuccessful)
+            {
+                <Alert Color="AlertColor.Success"> the form was created successfully! </Alert>
+            }
+            <EditForm Model="FormRequestModel" OnValidSubmit="HandleValidSubmit">
+                <DataAnnotationsValidator />
+                <ValidationSummary />
+            <div class="card">
+                <div class="card-header text-center">
+                    Fill in the required fields, then each time you press the <b>'add form field'</b> button, <br /> the <b>form-fieldtype</b> and <b>form-field-name(label)</b> fields will open in the field below.
+                </div>
+                <div class="card-body">
+                    
+                        <div class="mb-3">
+                            <label class="form-label">Form Name</label>
+                            <InputText class="form-control form-control-lg" type="text" id="name" @bind-Value="FormRequestModel.Name" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Form Description</label>
+                            <InputText class="form-control" type="text" id="description" @bind-Value="FormRequestModel.Description" />
+                        </div>
+
+                        <div class="row row-cols-lg-auto g-3 align-items-center">
+
+                          <div class="col-12">
+                            <div class="form-check">
+                                <label class="form-check-label" for="status">Form Status(active/passive)</label>
+                                <InputCheckbox type="checkbox" class="form-check-input" id="status" @bind-Value="FormRequestModel.Status" />
+                            </div>
+                          </div>
+                            <div class="col-12"></div><div class="col-12"></div>
+
+                            <div class="col-12">
+                                <button @onclick="AddFieldButton" class="btn btn-outline-success">Add Form Field</button>
+                            </div>
+
+                        </div>
+                    
+                </div>
+            </div>
+            <div class="card w-100 mb-3 mt-5">
+                <div class="card-body">
+                    @for (int i = 0; i < FieldCount; i++)
+                    {
+                        var fieldName = "fieldname_" + i;
+                        var fieldType = "fieldtype_" + i; var fieldRequired = "fieldrequired_" + i;
+                        var currentField = FormRequestModel.FormFields[i];
+
+                        <div class="row g-2 mt-2">
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <InputText type="text" class="form-control" id="@fieldName" name="@fieldName" placeholder="filed name" @bind-Value="currentField.FieldName" />
+                                    <label for="@fieldName">form label name</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                    <InputText type="text" class="form-control" id="@fieldType" placeholder="field type" @bind-Value="currentField.FieldType" />
+                                    <label for="@fieldType">form field type</label>
+                                </div>
+                            </div>
+                            <div class="col-md">
+                                <div class="form-floating">
+                                        <InputSelect class="form-select" id="floatingSelectGrid" @bind-Value="currentField.IsRequired">
+                                            <option value="true">Yes</option>
+                                            <option value="false">No</option>
+                                        </InputSelect>
+                                    <label for="@fieldRequired">form IsRequired</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    }
+                </div>
+            </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary btn-lg" @onclick="LetsCreateForm">Create Form</button>
+                </div>
+            </EditForm>
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+
+
+@code {
+    public Shared.FormRequest FormRequestModel = new Shared.FormRequest();
+    public Shared.FormRequestFields FormRequestFieldModel;
+
+    private bool isSuccessful = false;
+    private int FieldCount = 0;
+
+    protected override void OnInitialized()
+    {
+        var _fieldModel = new Shared.FormRequestFields()
+        {
+            FieldName = "",
+            FieldType = "",
+            IsRequired = false
+        };
+        FormRequestModel.FormFields.Add(_fieldModel);
+    }
+
+    void AddFieldButton()
+    {
+        FieldCount += 1;
+
+        var newField = new Shared.FormRequestFields()
+        {
+            FieldName = "",
+            FieldType = "",
+            IsRequired = false
+        };
+        FormRequestModel.FormFields.Add(newField);
+
+        Console.WriteLine("FieldCount: " + FieldCount);
+    }
+
+    async Task LetsCreateForm()
+    {
+        FormRequestModel.FieldCount = FieldCount;
+
+        var result = await FormService.CreateForm(FormRequestModel);
+
+        if (result.Successful)
+        {
+            isSuccessful = true;
+            await JSRuntime.InvokeVoidAsync("clearCreateForm");
+            FieldCount = 0;
+        }
+        else
+        {
+            isSuccessful = false;
+        }
+    }
+
+    private void HandleValidSubmit()
+    {
+        Task.Delay(5000);
+        isSuccessful = false;
+        Console.WriteLine("form nooo");
+    }
+
+}

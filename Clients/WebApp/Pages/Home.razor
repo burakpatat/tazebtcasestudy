@@ -1,7 +1,72 @@
 ﻿@page "/"
+@inject IReportService ReportService
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Dynamic Form App</PageTitle>
 
-<h1>Hello, world!</h1>
+<b><h2 class="text-center">Taze Development Studio Case Study</h2></b>
 
-Welcome to your new app.
+<div class="container">
+    <div class="row mt-5">
+        <div class="col">
+        </div>
+        <div class="col-10">
+            @foreach (var item in FormList)
+            {
+                <b><h3 class="text-center">@item.Name</h3></b>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            @foreach (var field in item.FormFields)
+                            {
+                                <th scope="col">@field.FieldName</th>
+
+                                FieldCount++;
+                            }
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < item.FormFields.Max(f => f.FormFieldValues.Count); i++)
+                        {
+                            var count = i + 1;
+                            <tr>
+                                <th scope="row">@count</th>
+                                @foreach (var field in item.FormFields)
+                                {
+                                    <td>
+                                        @if (field.FormFieldValues.Count > i)
+                                        {
+                                            @field.FormFieldValues[i].Value
+                                        }
+                                    </td>
+                                }
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+        <div class="col">
+        </div>
+    </div>
+</div>
+
+
+@code
+{
+    public List<GetFormQueryResult> FormList = new List<GetFormQueryResult>();
+
+    public int FieldCount = -1;
+
+    private string name; int x, y,sum;
+
+    protected override async Task OnInitializedAsync()
+    {
+        FormList = await ReportService.GetFormReportList();
+
+        sum = Convert.ToInt32("5") + 10;
+        Console.WriteLine(name);
+
+   
+    }
+}

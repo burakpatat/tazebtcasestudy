@@ -1,0 +1,134 @@
+﻿@page "/add-form"
+
+@inject IFormService FormService
+
+<h3 class="text-center">Add Form Data</h3>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-1">
+        </div>
+        <div class="col-10">
+            @if (isSuccessful)
+            {
+                <Alert Color="AlertColor.Success"> Form data added successfully! </Alert>
+            }
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                @foreach (var item in FormList)
+                {
+                    var collapseCount = "collapse" + ItemCount;
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#@collapseCount" aria-expanded="false" aria-controls="@collapseCount" style="color:#34b573 !important;">
+                                <b>@item.Name</b>
+                            </button>
+                        </h2>
+                        <div id="@collapseCount" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <p>@item.Description</p>
+                                <p>Form Status: @(item.Status == 1 ? "Active" : "Passive")</p>
+                                <br/>
+                                
+                                <EditForm Model="FormFieldRequestModel" OnValidSubmit="HandleValidSubmit">
+
+                                    @foreach (var field in item.FormFields)
+                                    {
+                                        var fieldType = "fieldtype_" + FieldCount;
+                                        
+
+                                        if(field.FormId == item.Id)
+                                        {
+                                            @if (field.FieldType == "checkbox")
+                                            {
+                                                FormFieldRequestModel.IsCheckboxField = true;
+
+                                                var dictionaryKeyb = field.FieldName;
+
+                                                <div class="mb-3 form-check">
+                                                    <label class="form-check-label">@field.FieldName</label>
+                                                    <InputCheckbox type="@field.FieldType" id="@fieldType" class="form-check-input" @bind-Value="fieldValueb" />
+                                                </div>
+
+                                                BoolFieldValues[dictionaryKeyb] = fieldValueb;
+                                            }
+                                            else
+                                            {
+                                                FormFieldRequestModel.IsCheckboxField = false;
+
+                                                var dictionaryKeys = field.FieldName;
+                                                //FieldValues.Add(dictionaryKeys, "");
+
+                                                if (!FieldValues.ContainsKey(dictionaryKeys))
+                                                {
+                                                    FieldValues[dictionaryKeys] = "";
+                                                }
+
+                                                <div class="mb-3">
+                                                    <label class="form-label">@field.FieldName</label>
+                                                    <InputText type="@field.FieldType" id="@fieldType" class="form-control" @bind-Value="FieldValues[dictionaryKeys]" />
+                                                </div>
+
+                                                
+                                            }
+                                        }
+
+                                        FieldCount++;
+                                    }
+                                    <div class="d-grid gap-2">
+                                        <button type="submit" class="btn btn-success btn-lg" @onclick="(e) => AddDataToForm(item.Id, item.Name)">Add Data to Form</button>
+                                    </div>
+                                </EditForm>
+                            </div>
+                        </div>
+                    </div>
+                    ItemCount++;
+                }
+            </div>
+        </div>
+        <div class="col-1">
+        </div>
+    </div>
+</div>
+
+@code {
+
+    Dictionary<string, string> FieldValues = new Dictionary<string, string>();
+    Dictionary<string, bool> BoolFieldValues = new Dictionary<string, bool>();
+
+    public List<GetFormQueryResult> FormList = new List<GetFormQueryResult>();
+    public Shared.FormFieldRequest FormFieldRequestModel = new Shared.FormFieldRequest();
+    public int ItemCount = 0, FieldCount = 1;
+    private bool isSuccessful = false;
+    bool fieldValueb;
+
+    protected override async Task OnInitializedAsync()
+    {
+        FormList = await FormService.GetFormList();
+    }
+    async Task AddDataToForm(Guid id, string name)
+    {
+        FormFieldRequestModel.FormId = id;
+        FormFieldRequestModel.FormName = name;
+
+        FormFieldRequestModel.FieldValues = FieldValues;
+        FormFieldRequestModel.BoolFieldValues = BoolFieldValues;
+
+        var result = await FormService.AddFormData(FormFieldRequestModel);
+
+        if (result.Successful)
+        {
+            isSuccessful = true;
+        }
+        else
+        {
+            isSuccessful = false;
+        }
+
+    }
+    private void HandleValidSubmit()
+    {
+        Task.Delay(5000);
+        isSuccessful = false;
+        Console.WriteLine("");
+    }
+}

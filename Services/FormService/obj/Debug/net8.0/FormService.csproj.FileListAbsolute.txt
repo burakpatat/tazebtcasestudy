@@ -71,3 +71,7 @@ D:\Github\tazebtcasestudy\Services\FormService\obj\Debug\net8.0\refint\FormServi
 D:\Github\tazebtcasestudy\Services\FormService\obj\Debug\net8.0\FormService.pdb
 D:\Github\tazebtcasestudy\Services\FormService\obj\Debug\net8.0\FormService.genruntimeconfig.cache
 D:\Github\tazebtcasestudy\Services\FormService\obj\Debug\net8.0\ref\FormService.dll
+D:\Github\tazebtcasestudy\Services\FormService\bin\Debug\net8.0\Shared.dll
+D:\Github\tazebtcasestudy\Services\FormService\bin\Debug\net8.0\Shared.pdb
+D:\Github\tazebtcasestudy\Services\FormService\bin\Debug\net8.0\MediatR.dll
+D:\Github\tazebtcasestudy\Services\FormService\bin\Debug\net8.0\MediatR.Contracts.dll

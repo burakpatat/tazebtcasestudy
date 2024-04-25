@@ -1,11 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Form.Infrastructure.Persistence
 {
@@ -15,9 +8,9 @@ namespace Form.Infrastructure.Persistence
         {
             optionsBuilder.UseSqlServer("Server=localhost;Database=TazeBtCase;Integrated Security=true;TrustServerCertificate=true;");
         }
-        public DbSet<Forms> Forms { get; set; }
-        public DbSet<FormFields> FormFields { get; set; }
-        public DbSet<FormFieldValues> FormFieldValues { get; set; }
+        public DbSet<Shared.Forms> Forms { get; set; }
+        public DbSet<Shared.FormFields> FormFields { get; set; }
+        public DbSet<Shared.FormFieldValues> FormFieldValues { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

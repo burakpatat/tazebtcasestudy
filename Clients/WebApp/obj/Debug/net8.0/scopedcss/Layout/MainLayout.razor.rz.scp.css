@@ -27,23 +27,23 @@ main[b-jzswhejw2w] {
         text-decoration: none;
     }
 
-    .top-row[b-jzswhejw2w]  a:hover, .top-row[b-jzswhejw2w]  .btn-link:hover {
-        text-decoration: underline;
-    }
+        .top-row[b-jzswhejw2w]  a:hover, .top-row[b-jzswhejw2w]  .btn-link:hover {
+            text-decoration: underline;
+        }
 
-    .top-row[b-jzswhejw2w]  a:first-child {
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+        .top-row[b-jzswhejw2w]  a:first-child {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
 @media (max-width: 640.98px) {
     .top-row[b-jzswhejw2w] {
         justify-content: space-between;
     }
 
-    .top-row[b-jzswhejw2w]  a, .top-row[b-jzswhejw2w]  .btn-link {
-        margin-left: 0;
-    }
+        .top-row[b-jzswhejw2w]  a, .top-row[b-jzswhejw2w]  .btn-link {
+            margin-left: 0;
+        }
 }
 
 @media (min-width: 641px) {
@@ -64,11 +64,11 @@ main[b-jzswhejw2w] {
         z-index: 1;
     }
 
-    .top-row.auth[b-jzswhejw2w]  a:first-child {
-        flex: 1;
-        text-align: right;
-        width: 0;
-    }
+        .top-row.auth[b-jzswhejw2w]  a:first-child {
+            flex: 1;
+            text-align: right;
+            width: 0;
+        }
 
     .top-row[b-jzswhejw2w], article[b-jzswhejw2w] {
         padding-left: 2rem !important;
