@@ -9,3 +9,7 @@ It is a form application where the fields containing two microservices are deter
   GET /form & /report
 ```
 
+
+https://github.com/burakpatat/tazebtcasestudy/assets/28507414/9b708f5e-8834-46b2-a318-933d382afadd
+
+
