@@ -2,6 +2,8 @@
 
 It is a form application where the fields containing two microservices are determined dynamically. Form microservice runs for `create-form` and `add-form-data` events, and Report microservice runs for `home-list`.
 
+`entity–attribute–value` (EAV) model approach is adopted as the database schema
+
 **.Net Core 8** & **Blazor**
 
 **Api Gateway - Ocelot was used**
